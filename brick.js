@@ -9,5 +9,6 @@ function Brick(x, y) {
       ctx.fillStyle = 'white';
       ctx.fill();
       ctx.closePath();
+      
     }
 }

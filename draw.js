@@ -7,8 +7,20 @@ var leftPressed;
 
   ball = new Ball();
   pad = new Pad();
-  for (let i = 0; i < 11; i++) {
-    bricks[i] = new Brick(i * 60 + 10, 40);
+
+//let i = 0;
+//  while (i < 11) {
+//    bricks[i] = new Brick(i * 60 + 10, 40);
+//      i++;
+//      }
+let z = 40;
+let i = 0;
+for (let j = 0; j< 8; j++) {
+    for (let k = 0; k<11; k++) {
+      bricks[i] = new Brick(k * 60 + 10, z);
+      i = i +1;
+    }
+    z = z+20;
   }
 
 function draw() {
@@ -19,8 +31,9 @@ function draw() {
   pad.keyConditions();
   pad.sides();
   ball.checkPad();
-  for (let i = 0; i <bricks.length; i++) {
-    bricks[i].show();
+  for (let j = 0; j< 3; j++) {
+    for (let i = 0; i <bricks.length; i++) {
+      bricks[i].show();
 
     if (ball.x > bricks[i].x && ball.x < bricks[i].x + 60) {
       if (ball.y > bricks[i].y && ball.y < bricks[i].y +10) {
@@ -30,6 +43,7 @@ function draw() {
           }
         }
       }
+    }
 
   requestAnimationFrame(draw);
 } draw();

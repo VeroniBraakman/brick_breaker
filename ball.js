@@ -1,7 +1,7 @@
 function Ball() {
 
   this.x = 100;
-  this.y = 75;
+  this.y = 200;
   this.speedX = 2;
   this.speedY = 2;
   this.radius = 8
